@@ -1,0 +1,487 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090711">
+<meta name="description" content="BRAVE TOWN Official Portal">
+<title>BRAVE TOWN | OFFICIAL PORTAL</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#090711;--panel:#151024;--panel2:#201431;
+--purple:#8738ed;--light:#c18aff;--white:#fff;
+--muted:#aa9bbd;--line:#ffffff16;
+}
+*{box-sizing:border-box}
+body{
+margin:0;background:radial-gradient(ellipse at 50% -10%,#41156a 0,transparent 42%),var(--bg);
+color:var(--white);font-family:Cairo,sans-serif;min-height:100vh
+}
+a{text-decoration:none;color:inherit}
+button,input{font:inherit}
+.container{width:min(1120px,92%);margin:auto}
+.announcement{
+text-align:center;padding:9px;background:#211432;
+border-bottom:1px solid #9d50ef44;color:#d9bdff;font-size:12px
+}
+header{
+position:sticky;top:0;z-index:100;
+background:#100b1eef;backdrop-filter:blur(18px);
+border-bottom:1px solid var(--line)
+}
+nav{
+min-height:75px;display:flex;align-items:center;
+justify-content:space-between;gap:15px;direction:ltr
+}
+.brand{font-size:20px;font-weight:900;color:#d9b3ff;direction:ltr}
+.menu-wrap{position:relative}
+.menu{
+width:43px;height:43px;border-radius:12px;
+background:#211532;color:white;border:1px solid #ffffff22;
+font-size:25px;cursor:pointer;transition:.2s
+}
+.menu:hover,.menu.active{background:var(--purple);border-color:#c18aff}
+.dropdown{
+display:none;position:absolute;top:53px;left:0;width:220px;
+padding:9px;background:#171024;border:1px solid #ffffff20;
+border-radius:15px;box-shadow:0 15px 45px #0009;direction:rtl
+}
+.dropdown.open{display:block;animation:show .18s ease}
+@keyframes show{from{opacity:0;transform:translateY(-7px)}to{opacity:1;transform:translateY(0)}}
+.dropdown button{
+width:100%;display:block;text-align:right;padding:11px 13px;
+border:0;border-radius:9px;background:transparent;
+color:#d8c9e8;font-size:12px;cursor:pointer;transition:.2s
+}
+.dropdown button:hover,.dropdown button.selected{
+background:#8738ed;color:white
+}
+main{min-height:65vh}
+.view{display:none;padding:65px 0;animation:show .3s ease}
+.view.active{display:block}
+.hero{
+min-height:570px;display:grid;place-items:center;text-align:center;
+padding:70px 0;position:relative;overflow:hidden
+}
+.hero:before{
+content:"";position:absolute;width:350px;height:350px;
+background:#812ce8;filter:blur(130px);opacity:.23
+}
+.hero-content{position:relative}
+.brand-mark{
+width:130px;height:130px;margin:0 auto 25px;
+display:grid;place-items:center;border-radius:35px;
+background:linear-gradient(145deg,#c18aff,#6420b8);
+box-shadow:0 0 55px #9b48ff55;font-size:65px;color:white
+}
+.eyebrow{
+display:inline-block;border:1px solid #a958ff66;
+padding:8px 18px;border-radius:30px;color:#d6b1ff;font-size:11px
+}
+h1{
+font-size:clamp(43px,9vw,85px);font-weight:900;margin:15px 0;
+background:linear-gradient(90deg,#fff,#c18aff,#8738ed);
+-webkit-background-clip:text;color:transparent
+}
+.hero p{max-width:650px;margin:0 auto 25px;color:var(--muted);line-height:2;font-size:14px}
+.btn{
+display:inline-block;padding:12px 23px;border-radius:13px;
+background:linear-gradient(110deg,#7624dc,#ad55ff);
+color:white;font-size:12px;font-weight:800;
+border:1px solid #ffffff15;cursor:pointer;transition:.25s
+}
+.btn:hover,.btn:focus{background:#8738ed;transform:translateY(-2px)}
+.btn.secondary{background:#ffffff08;border:1px solid #a958ff66}
+.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:650px;margin:45px auto}
+.stat,.panel{
+background:linear-gradient(145deg,#211532,#120d20);
+border:1px solid var(--line);border-radius:20px
+}
+.stat{padding:17px}
+.stat strong{display:block;color:#d3a7ff;font-size:22px}
+.stat span{font-size:10px;color:var(--muted)}
+.heading{text-align:center;margin-bottom:35px}
+.heading small{color:#bd8aff;letter-spacing:2px;font-weight:800}
+.heading h2{font-size:35px;margin:5px 0}
+.heading p{color:var(--muted);font-size:12px}
+.intro{padding:30px;line-height:2;color:#c9bdd7;font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.rule{padding:20px;transition:.25s}
+.rule:hover,.product:hover{transform:translateY(-4px);border-color:#b66cff88}
+.rule h3{font-size:15px;color:#e0c4ff;margin:0 0 12px}
+.rule ul{padding-right:20px;color:#c5b9d2;font-size:12px;line-height:2.2;margin:0}
+.rule li{margin-bottom:4px}
+.search{
+width:100%;background:#151024;color:white;
+border:1px solid #ffffff22;border-radius:12px;padding:13px;
+margin-bottom:15px;outline:none
+}
+.search:focus{border-color:var(--purple);box-shadow:0 0 0 3px #8738ed22}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:5px 0 15px}
+.tab{
+white-space:nowrap;background:#211532;color:#d4c4e5;
+border:1px solid var(--line);border-radius:11px;padding:9px 14px;
+font-size:11px;cursor:pointer
+}
+.tab.active,.tab:focus{background:#8537df;color:white}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.product{padding:23px;transition:.25s}
+.product-icon{font-size:28px;margin-bottom:12px}
+.product h3{font-size:15px}
+.price{font-size:24px;color:#d4a5ff;font-weight:900}
+.price small{font-size:11px}
+.product .btn{width:100%;text-align:center;margin-top:12px}
+.founders,.servers{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.founder,.server{padding:25px;display:flex;align-items:center;gap:17px}
+.avatar{
+width:55px;height:55px;background:#8138db;border-radius:17px;
+display:grid;place-items:center;font-size:25px
+}
+.founder p,.server p{font-size:11px;color:var(--muted);margin:3px 0}
+.founder h3,.server h3{margin:0;font-size:16px}
+.server{justify-content:space-between}
+.activation{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.activation .panel{padding:25px}
+.activation h3{color:#d5acff}
+.activation ul{color:#c9bdd7;font-size:12px;line-height:2.4;padding-right:20px}
+.jobs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.job{text-align:center;padding:22px}
+.job h3{font-size:14px}
+.job p{font-size:11px;color:var(--muted)}
+footer{
+border-top:1px solid var(--line);text-align:center;
+padding:35px 10px;color:var(--muted);font-size:11px
+}
+.footer-brand{font-size:22px;color:#d2a6ff;font-weight:900}
+.back-home{
+display:block;margin:0 auto 25px;background:#211532;
+border:1px solid #ffffff20;color:#d8b7ff;padding:9px 17px;
+border-radius:11px;cursor:pointer;font-size:12px
+}
+.back-home:hover{background:var(--purple);color:white}
+.empty{text-align:center;padding:45px 15px}
+@media(max-width:800px){
+.grid{grid-template-columns:1fr}
+.products{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:550px){
+.view{padding:45px 0}
+.hero{min-height:530px}
+.brand-mark{width:110px;height:110px;font-size:55px}
+.heading h2{font-size:27px}
+.products{gap:9px}
+.product{padding:13px}
+.founders,.servers,.activation{grid-template-columns:1fr}
+.jobs{grid-template-columns:1fr 1fr}
+.stat{padding:12px 5px}
+.stat strong{font-size:17px}
+.server{flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+
+<div class="announcement">♛ BRAVE TOWN — البوابة الرسمية للمدينة</div>
+
+<header>
+<nav class="container">
+<div class="menu-wrap">
+<button class="menu" id="menu" aria-label="القائمة" aria-expanded="false">⋮</button>
+<div class="dropdown" id="dropdown">
+<button data-view="home" class="selected">♛ الرئيسية</button>
+<button data-view="intro">✦ نبذة عن المدينة</button>
+<button data-view="rules">📜 القوانين</button>
+<button data-view="store">🛒 المتجر</button>
+<button data-view="jobs">🚔 القطاعات والتقديم</button>
+<button data-view="founders">♛ المؤسسون</button>
+<button data-view="servers">🌐 السيرفرات</button>
+<button data-view="activation">🔑 شروط التفعيل</button>
+<button data-view="contact">✧ انضم إلى بريف تاون</button>
+</div>
+</div>
+<a class="brand" href="#" id="brandHome">♛ BRAVE TOWN</a>
+</nav>
+</header>
+
+<main>
+<section class="view active" id="home">
+<div class="hero">
+<div class="hero-content container">
+<div class="brand-mark">♛</div>
+<div class="eyebrow">THE OFFICIAL BRAVE TOWN PORTAL</div>
+<h1>BRAVE TOWN</h1>
+<p>مرحباً بك في عالم بريف تاون، عالم يجمع الواقعية والاحترافية والتحدي. اكتشف أنظمة المدينة واختر القسم الذي تريد زيارته.</p>
+<div class="actions">
+<a class="btn" href="https://discord.gg/bt-1" target="_blank" rel="noopener">انضم إلى السيرفر الأساسي ↗</a>
+<button class="btn secondary" onclick="openView('rules')">استكشف القوانين ↓</button>
+</div>
+<div class="stats">
+<div class="stat"><strong>07</strong><span>أقسام القوانين</span></div>
+<div class="stat"><strong>24/7</strong><span>مجتمع بريف تاون</span></div>
+<div class="stat"><strong>ELITE</strong><span>تجربة احترافية</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="view" id="intro">
+<div class="container panel intro">
+<div class="heading"><small>WELCOME TO BRAVE TOWN</small><h2>مرحباً بك في BRAVE TOWN</h2></div>
+هذا الموقع هو المرجع الرسمي للاعبين، ويضم القوانين العامة وقوانين الرول بلاي والجهات الرسمية والمتجر وشروط التفعيل. نهدف إلى توفير بيئة منظمة وعادلة وتجربة ممتعة لجميع اللاعبين.
+</div>
+</section>
+
+<section class="view" id="rules">
+<div class="container">
+<div class="heading"><small>SERVER REGULATIONS</small><h2>مركز القوانين</h2><p>جميع الأنظمة والقوانين الرسمية لمدينة بريف تاون</p></div>
+<input class="search" id="search" placeholder="ابحث عن قانون...">
+<div class="tabs" id="tabs"></div>
+<div class="grid" id="ruleGrid"></div>
+</div>
+</section>
+
+<section class="view" id="store">
+<div class="container">
+<div class="heading"><small>OFFICIAL STORE</small><h2>متجر بريف تاون</h2><p>الخدمات والمنتجات المتوفرة</p></div>
+<div class="products" id="products"></div>
+</div>
+</section>
+
+<section class="view" id="jobs">
+<div class="container">
+<div class="heading"><small>JOIN OUR TEAM</small><h2>القطاعات والتقديم</h2><p>كن جزءاً من مجتمع بريف تاون</p></div>
+<div class="jobs">
+<div class="panel job"><div>🚔</div><h3>الشرطة</h3><p>التقديم عبر الديسكورد</p></div>
+<div class="panel job"><div>🚑</div><h3>الإسعاف EMS</h3><p>التقديم عبر الديسكورد</p></div>
+<div class="panel job"><div>⚖️</div><h3>وزارة العدل</h3><p>التقديم عبر الديسكورد</p></div>
+</div>
+</div>
+</section>
+
+<section class="view" id="founders">
+<div class="container">
+<div class="heading"><small>THE FOUNDERS</small><h2>المؤسسون</h2><p>قيادة وتأسيس مجتمع BRAVE TOWN</p></div>
+<div class="founders">
+<div class="panel founder"><div class="avatar">♛</div><div><h3>أسامة</h3><p>المؤسس · .os1.</p></div></div>
+<div class="panel founder"><div class="avatar">♛</div><div><h3>سامي</h3><p>المؤسس · iz9m</p></div></div>
+</div>
+</div>
+</section>
+
+<section class="view" id="servers">
+<div class="container">
+<div class="heading"><small>OUR COMMUNITY</small><h2>السيرفرات</h2><p>مجتمعات بريف تاون الرسمية</p></div>
+<div class="servers">
+<div class="panel server"><div><h3>السيرفر الأساسي</h3><p>المجتمع الرسمي للمدينة</p></div><a class="btn" href="https://discord.gg/bt-1" target="_blank" rel="noopener">انضم الآن ↗</a></div>
+<div class="panel server"><div><h3>سيرفر العصابات</h3><p>مجتمع العصابات الرسمي</p></div><a class="btn" href="https://discord.gg/EUCBHnpkk" target="_blank" rel="noopener">انضم الآن ↗</a></div>
+</div>
+</div>
+</section>
+
+<section class="view" id="activation">
+<div class="container">
+<div class="heading"><small>ACTIVATION SYSTEM</small><h2>شروط التفعيل</h2><p>الشروط المطلوبة لدخول المدينة</p></div>
+<div class="activation">
+<div class="panel">
+<h3>الشروط العامة</h3>
+<ul>
+<li>العمر المسموح لدخول السيرفر: 13 سنة فما فوق.</li>
+<li>ممنوع استخدام أي شخصية افتراضية إلا من خلال المتجر فقط.</li>
+<li>ممنوع كتابة اسمك باللغة الإنجليزية أو برموز أو تشكيل أو أن يكون اسم شخصية مشهورة.</li>
+<li>يمنع الدخول من أجهزة غير جهازك الشخصي.</li>
+<li>يحق لك امتلاك شخصيتين فقط.</li>
+</ul>
+</div>
+<div class="panel">
+<h3>قبل دخول المدينة</h3>
+<ul>
+<li>قراءة القوانين والالتزام بها.</li>
+<li>احترام جميع اللاعبين والإدارة.</li>
+<li>الالتزام بتعليمات التفعيل.</li>
+<li>استخدام جهازك الشخصي.</li>
+<li>التواصل مع الإدارة عند وجود استفسار.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section class="view" id="contact">
+<div class="container panel" style="padding:35px;text-align:center">
+<small style="color:#c18aff">BECOME PART OF BRAVE TOWN</small>
+<h2>مكانك بين أهل بريف تاون</h2>
+<p style="color:var(--muted);font-size:13px">ابدأ رحلتك وانضم إلى مجتمعنا</p>
+<div class="actions">
+<a class="btn" href="https://discord.gg/bt-1" target="_blank" rel="noopener">السيرفر الأساسي</a>
+<a class="btn secondary" href="https://discord.gg/EUCBHnpkk" target="_blank" rel="noopener">سيرفر العصابات</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="footer-brand">♛ BRAVE TOWN</div>
+<p>الهيبة تبدأ من هنا</p>
+<p>جميع الحقوق محفوظة لمجتمع BRAVE TOWN</p>
+</footer>
+
+<script>
+const sections=[
+{
+name:"القوانين العامة",
+items:[
+["الاحترام المتبادل",["يجب احترام جميع اللاعبين والإدارة وعدم استخدام الألفاظ المسيئة أو الاستفزازية.","يمنع التنمر أو التشهير أو إثارة المشاكل بين الأعضاء.","يمنع انتحال شخصية لاعب آخر أو أحد أفراد الإدارة."]],
+["الالتزام بتعليمات الإدارة",["يجب الالتزام بالتوجيهات والقرارات الصادرة من الإدارة ضمن صلاحياتها.","يمنع إزعاج الإدارة أو تكرار المنشن دون سبب واضح.","يمكن الاعتراض على القرار عبر القنوات المخصصة وبأسلوب محترم."]],
+["الحسابات والغش",["يمنع استخدام الهاكات أو البرامج أو الثغرات التي تمنح أفضلية غير عادلة.","يمنع مشاركة الحساب بهدف مخالفة الأنظمة أو تمكين شخص آخر من الغش.","يجب الإبلاغ عن الثغرات وعدم استغلالها."]],
+["العدالة داخل السيرفر",["يمنع استغلال الأخطاء التقنية أو الأنظمة لتحقيق مكاسب غير مستحقة.","يمنع الاتفاق على تخريب السيناريوهات أو تعطيل تجربة الآخرين.","تطبق العقوبات بحسب نوع المخالفة وتكرارها وما تقرره الإدارة."]]
+]},
+{
+name:"قوانين الرول بلاي",
+items:[
+["مفهوم الرول بلاي",["يجب تمثيل الشخصية والتصرف بما يناسب الموقف والبيئة داخل اللعبة.","يمنع الخروج عن سياق الشخصية أو تحويل المواقف الجدية إلى مزاح يفسد السيناريو.","يجب إعطاء الآخرين فرصة للتفاعل وعدم فرض نتيجة المشهد عليهم."]],
+["الحياة والخوف على الشخصية",["يجب التعامل مع حياة الشخصية بجدية عند التعرض لخطر واضح.","يمنع تجاهل التهديدات الجدية أو التصرف وكأن الشخصية لا تتأثر بالخطر.","يجب تمثيل الخوف والإصابات والنتائج بما يتناسب مع أحداث السيناريو."]],
+["الموت والإصابات",["يجب الالتزام بنظام الموت والإصابات المعتمد داخل الماب.","يمنع العودة إلى موقع المواجهة أو استكمال نفس الاشتباك بطريقة تلغي نتيجة الإصابة أو الموت.","يمنع تذكر أو استخدام معلومات لا تستطيع الشخصية معرفتها بعد فقدان الوعي وفق نظام السيرفر.","يجب احترام دور المسعفين وإجراءات العلاج والإنعاش داخل السيناريو."]],
+["RDM — القتل العشوائي",["يمنع قتل لاعب دون سبب واضح ومبرر داخل الرول بلاي.","يجب وجود موقف أو تصعيد أو سيناريو يبرر استخدام القوة وفق قوانين السيرفر.","الخلافات الشخصية خارج اللعبة لا تبرر الاعتداء داخلها."]],
+["VDM — استخدام المركبة كسلاح",["يمنع دهس اللاعبين أو استخدام المركبة للاعتداء عليهم دون مبرر سيناريوي.","يمنع صدم المركبات بشكل متعمد لإفساد اللعب أو إجبار الآخرين على التوقف.","يجب قيادة المركبة بطريقة تتناسب مع طبيعة الطريق والموقف."]],
+["NVL — عدم تقدير الحياة",["يمنع تجاهل الخطر الواضح الذي يهدد حياة الشخصية.","يجب التفاعل مع التهديدات والمواقف الخطرة بصورة واقعية.","يمنع القيام بتصرفات متهورة لا يمكن أن تقدم عليها شخصية تحافظ على حياتها."]],
+["Power Gaming — مخالفة الواقعية",["يمنع تنفيذ أفعال غير واقعية أو فرض نتائج على لاعب آخر دون منحه فرصة للرد.","يجب استخدام أوامر التمثيل مثل /me و /do بطريقة واضحة ومنطقية عند الحاجة.","يمنع استغلال خصائص اللعبة لتنفيذ أفعال لا يمكن حدوثها ضمن سياق الرول بلاي."]],
+["Meta Gaming — استخدام المعلومات الخارجية",["يمنع استخدام معلومات تم الحصول عليها خارج اللعبة لتحقيق أفضلية داخل السيناريو.","يمنع نقل معلومات المواقع أو الأحداث من المحادثات الخارجية إلى الشخصية داخل اللعبة.","يجب أن تحصل الشخصية على المعلومات من خلال أحداث الرول بلاي المسموح بها."]],
+["السيناريوهات والتصعيد",["يجب إعطاء المواقف فرصة للتدرج قبل الانتقال إلى التصعيد أو استخدام القوة.","يمنع بدء سيناريو عدائي دون سبب أو سياق مفهوم.","يمنع قطع السيناريو أو الانسحاب منه بقصد تجنب نتائجه.","يجب احترام نهاية السيناريو والنتائج المترتبة عليه."]],
+["المداهمات والاحتلال",["يجب وجود مبرر وسيناريو واضح قبل تنفيذ المداهمة أو احتلال موقع وفق أنظمة السيرفر.","يمنع تنفيذ المداهمات أو الاحتلال بصورة عشوائية أو دون استيفاء الشروط المعتمدة.","يجب احترام حدود السيناريو والأطراف المشاركة فيه."]],
+["الخطف والرهائن",["يجب أن يكون للخطف أو احتجاز الرهائن سبب ضمن سيناريو مفهوم.","يمنع اتخاذ الأصدقاء أو المعارف رهائن بصورة صورية للحصول على أفضلية.","يجب الحفاظ على جدية التفاوض وعدم استخدام الرهينة كوسيلة لإفساد المشهد."]]
+]},
+{
+name:"الشرطة والعسكريون",
+items:[
+["الرتب والزي الرسمي",["يلتزم العسكري بالزي والمركبة والمعدات المناسبة لرتبته ومهمته.","يمنع انتحال رتبة أو صلاحية ليست ممنوحة للشخصية.","يجب احترام التسلسل الإداري والأوامر النظامية."]],
+["التدرج في استخدام القوة",["يجب اختيار الإجراء المناسب للموقف وعدم استخدام قوة غير مبررة.","يكون استخدام القوة متناسباً مع مستوى التهديد داخل السيناريو.","يجب إعطاء التعليمات والتحذيرات عندما يسمح الموقف بذلك."]],
+["التوقيف والقبض",["يجب وجود سبب واضح ومفهوم للتوقيف أو القبض.","يجب توضيح سبب القبض للموقوف متى سمح السيناريو بذلك.","يمنع توقيف المواطنين أو إساءة استخدام الصلاحيات دون مبرر."]],
+["التفتيش والإجراءات",["يجب أن يستند التفتيش إلى سبب وإجراء نظامي داخل الرول بلاي.","تراعى صلاحيات الشخصية والأنظمة المعتمدة عند التفتيش أو المصادرة.","يجب توثيق الإجراءات المهمة وفق نظام السيرفر."]],
+["المطاردات والمركبات",["تراعى سلامة اللاعبين وواقعية القيادة أثناء المطاردة.","يمنع استخدام المركبة بطريقة عبثية أو غير واقعية لإيقاف الآخرين.","يجب الالتزام بتعليمات القيادة والمواقف الميدانية."]],
+["الموقوفون والرهائن",["يجب التعامل مع الموقوفين باحترام وعدم إهانتهم خارج إطار السيناريو.","تراعى سلامة الرهائن وتكون المفاوضات ضمن سياق منطقي.","يمنع استغلال الصلاحيات أو المعدات لتحقيق مكاسب شخصية."]]
+]},
+{
+name:"الإسعاف EMS",
+items:[
+["الحياد وأولوية الحالات",["يلتزم المسعف بالحياد وتقديم الخدمة وفق خطورة الحالة وأولويتها.","يمنع التمييز بين اللاعبين بسبب خلافات أو انتماءات داخل اللعبة.","تنظم الاستجابة للحالات بحسب ظروف الموقع وإمكانية الوصول الآمن."]],
+["أمان موقع البلاغ",["لا يدخل المسعف موقع اشتباك غير مؤمن قبل التأكد من سلامة الوصول وفق السيناريو.","يحق للمسعف طلب تأمين الموقع قبل تقديم الخدمة.","يجب عدم تعريض الطاقم أو المصابين لخطر إضافي دون مبرر."]],
+["التمثيل الطبي",["يستخدم المسعف أوامر /me و /do لشرح الفحص والعلاج عند الحاجة.","يجب تمثيل الإصابة والعلاج بصورة واقعية ومناسبة للحالة.","يمنع تجاهل حالة المصاب أو إنهاء العلاج دون إكمال التمثيل المطلوب."]],
+["المركبات والأدوية",["تستخدم مركبات الإسعاف والمعدات لأغراض العمل فقط.","يمنع بيع الأدوية أو المعدات أو استخدامها لمصلحة شخصية.","يجب المحافظة على مركبات وممتلكات القسم."]],
+["الوفاة والمستشفى",["تُتبع آلية إعلان الوفاة والإجراءات الطبية المعتمدة داخل السيرفر عند الحالات القاتلة.","يُحترم المستشفى باعتباره موقعاً مخصصاً للعلاج وتراعى سلامته.","يمنع الاعتداء على المسعفين أثناء أداء مهامهم دون مبرر سيناريوي معتمد."]]
+]},
+{
+name:"المحكمة والقضاء",
+items:[
+["حرمة المحكمة",["تعد المحكمة موقعاً مخصصاً للإجراءات القضائية ويجب احترام نظامها.","يمنع التشويش على الجلسات أو تعطيلها عمداً.","يلتزم الحاضرون بتوجيهات القاضي داخل الجلسة."]],
+["حياد القاضي",["يلتزم القاضي بالحياد وعدم تفضيل طرف بسبب علاقة أو خلاف شخصي.","يجب الاستماع إلى الأطراف ومنحهم فرصة عادلة لعرض أقوالهم.","يجب أن تستند الأحكام إلى الوقائع والأدلة المقدمة."]],
+["المحامي والسرية",["يحق للمتهم الاستعانة بمحامٍ وفق نظام المحكمة.","تحترم سرية ما يقدمه الموكل لمحاميه ضمن حدود أنظمة السيرفر.","يمنع التأثير غير المشروع على الشهود أو أطراف القضية."]],
+["الأدلة والمذكرات",["تقبل الأدلة التي جُمعت وقدمت بطريقة نظامية داخل الرول بلاي.","تراعى إجراءات مذكرات التفتيش والاعتقال المعتمدة.","يمنع تزوير الأدلة أو إخفاؤها أو تقديم معلومات مضللة للمحكمة."]],
+["الجلسات والأحكام",["تدار الجلسة وفق ترتيب يحدده القاضي.","تعلن الأحكام وأسبابها ضمن سياق القضية.","تطبق الأحكام القضائية وفق صلاحيات الجهات المختصة."]]
+]},
+{
+name:"الإجرام والعصابات",
+items:[
+["السلوك الإجرامي",["يجب أن يكون النشاط الإجرامي ضمن سيناريو واضح ومتوافق مع أنظمة السيرفر.","يمنع مضايقة العسكريين أو استفزازهم بصورة متكررة دون سياق لعب.","يمنع الخروج من اللعبة أو مغادرة السيناريو بقصد تجنب القبض أو نتائجه."]],
+["الاستسلام والتهديد",["يجب التفاعل مع التهديد الجدي بالسلاح بصورة واقعية.","عند تحقق شروط الاستسلام في السيناريو يجب عدم تجاهلها أو مواصلة التصعيد بلا مبرر.","يمنع استغلال الثغرات أو الحركات غير الواقعية للهروب من موقف محسوم."]],
+["السطو والرهائن",["يمنع بدء سرقة بنك دون استيفاء متطلبات السيناريو المعتمدة.","يمنع اتخاذ الأصدقاء أو المعارف رهائن بصورة متفق عليها مسبقاً للحصول على أفضلية.","يجب أن تكون مطالب الرهائن والتفاوض منطقية ضمن أحداث الموقف."]],
+["العصابات",["يلتزم أفراد العصابة بأنظمة السيرفر والسيناريوهات المعتمدة.","يمنع الاعتداء العشوائي على عصابة أخرى دون سبب أو تصعيد مناسب.","يمنع استغلال العضوية أو ممتلكات العصابة لمخالفة القوانين العامة."]]
+]},
+{
+name:"المركبات والقيادة",
+items:[
+["القيادة الواقعية",["يجب قيادة المركبات بما يتناسب مع نوعها والطريق والظروف المحيطة.","يمنع القيادة العبثية أو القفزات غير المنطقية التي تفسد السيناريو.","تراعى سلامة المشاة واللاعبين أثناء القيادة."]],
+["الصدم والحوادث",["يمنع الصدم العشوائي أو المتعمد دون مبرر رول بلاي.","يجب تمثيل الحوادث والإصابات الناتجة عنها وفق طبيعة الموقف.","يمنع استخدام المركبة لإفساد مشهد أو تعطيل لاعب بصورة متعمدة."]],
+["مركبات الجهات الرسمية",["تستخدم المركبات الرسمية من أصحاب الصلاحية ولأغراض العمل.","يمنع الاستيلاء على مركبة رسمية أو استخدامها خارج سياق السيناريو المسموح.","يجب المحافظة على المركبات وإعادتها وفق تعليمات القسم."]]
+]}
+];
+
+let active=0;
+const tabs=document.getElementById("tabs");
+const grid=document.getElementById("ruleGrid");
+const search=document.getElementById("search");
+
+function renderTabs(){
+tabs.innerHTML=sections.map((s,i)=>
+`<button class="tab ${i===active?'active':''}" data-i="${i}">${s.name}</button>`
+).join("");
+tabs.querySelectorAll("button").forEach(b=>{
+b.onclick=()=>{
+active=Number(b.dataset.i);
+renderTabs();renderRules();
+};
+});
+}
+function renderRules(){
+const q=search.value.trim().toLowerCase();
+let html="",count=0;
+sections[active].items.forEach((item,i)=>{
+if(q&&!(item[0]+" "+item[1].join(" ")).toLowerCase().includes(q))return;
+count++;
+html+=`<article class="panel rule">
+<h3><span style="color:#a45aff">${String(i+1).padStart(2,"0")} — </span>${item[0]}</h3>
+<ul>${item[1].map(x=>`<li>${x}</li>`).join("")}</ul>
+</article>`;
+});
+grid.innerHTML=html||'<p style="color:#aaa">لا توجد نتائج مطابقة.</p>';
+}
+renderTabs();renderRules();
+search.addEventListener("input",renderRules);
+
+const products=[
+["تفعيل فوري","2.50","♛"],["رتبة VIP","5","✦"],
+["سلاح خفيف","2.50","⚔"],["سلاح ثقيل","7.50","◆"],
+["مقر عصابة","20","⌂"],["فتح قطاع عسكري","17","★"]
+];
+document.getElementById("products").innerHTML=products.map(p=>`
+<div class="panel product">
+<div class="product-icon">${p[2]}</div>
+<h3>${p[0]}</h3>
+<div class="price">${p[1]} <small>﷼</small></div>
+<a class="btn secondary" href="https://discord.gg/bt-1" target="_blank" rel="noopener">اطلب الآن ↗</a>
+</div>`).join("");
+
+const menu=document.getElementById("menu");
+const dropdown=document.getElementById("dropdown");
+const menuItems=dropdown.querySelectorAll("button");
+
+function openView(id){
+document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));
+const target=document.getElementById(id);
+if(target)target.classList.add("active");
+menuItems.forEach(b=>{
+b.classList.toggle("selected",b.dataset.view===id);
+});
+dropdown.classList.remove("open");
+menu.classList.remove("active");
+menu.setAttribute("aria-expanded","false");
+window.scrollTo({top:0,behavior:"smooth"});
+}
+menu.onclick=()=>{
+const opened=dropdown.classList.toggle("open");
+menu.classList.toggle("active",opened);
+menu.setAttribute("aria-expanded",String(opened));
+};
+menuItems.forEach(b=>b.onclick=()=>openView(b.dataset.view));
+document.getElementById("brandHome").onclick=e=>{
+e.preventDefault();openView("home");
+};
+document.addEventListener("click",e=>{
+if(!e.target.closest(".menu-wrap")){
+dropdown.classList.remove("open");
+menu.classList.remove("active");
+menu.setAttribute("aria-expanded","false");
+}
+});
+document.addEventListener("keydown",e=>{
+if(e.key==="Escape"){
+dropdown.classList.remove("open");
+menu.classList.remove("active");
+menu.setAttribute("aria-expanded","false");
+}
+});
+</script>
+</body>
+</html>
