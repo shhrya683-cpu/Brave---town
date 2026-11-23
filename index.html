@@ -71,10 +71,17 @@ background:#812ce8;filter:blur(130px);opacity:.23
 }
 .hero-content{position:relative}
 .brand-mark{
-width:130px;height:130px;margin:0 auto 25px;
-display:grid;place-items:center;border-radius:35px;
-background:linear-gradient(145deg,#c18aff,#6420b8);
-box-shadow:0 0 55px #9b48ff55;font-size:65px;color:white
+width:145px;height:145px;margin:0 auto 25px;
+display:block;object-fit:cover;
+border-radius:50%;
+border:4px solid #8738ed;
+box-shadow:0 0 35px #8738ed88,0 0 75px #8738ed33;
+background:#151024;
+transition:.3s;
+}
+.brand-mark:hover{
+transform:scale(1.06);
+box-shadow:0 0 45px #8738ed,0 0 85px #8738ed66;
 }
 .eyebrow{
 display:inline-block;border:1px solid #a958ff66;
@@ -170,7 +177,7 @@ border-radius:11px;cursor:pointer;font-size:12px
 @media(max-width:550px){
 .view{padding:45px 0}
 .hero{min-height:530px}
-.brand-mark{width:110px;height:110px;font-size:55px}
+.brand-mark{width:115px;height:115px}
 .heading h2{font-size:27px}
 .products{gap:9px}
 .product{padding:13px}
@@ -210,7 +217,10 @@ border-radius:11px;cursor:pointer;font-size:12px
 <section class="view active" id="home">
 <div class="hero">
 <div class="hero-content container">
-<div class="brand-mark">♛</div>
+
+<!-- صورة شعار بريف تاون -->
+<img class="brand-mark" src="logo.jpg" alt="BRAVE TOWN Logo">
+
 <div class="eyebrow">THE OFFICIAL BRAVE TOWN PORTAL</div>
 <h1>BRAVE TOWN</h1>
 <p>مرحباً بك في عالم بريف تاون، عالم يجمع الواقعية والاحترافية والتحدي. اكتشف أنظمة المدينة واختر القسم الذي تريد زيارته.</p>
