@@ -8,168 +8,438 @@
 <meta name="description" content="BRAVE TOWN Official Portal">
 <title>BRAVE TOWN | OFFICIAL PORTAL</title>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
 <style>
 :root{
---bg:#090711;--panel:#151024;--panel2:#201431;
---purple:#8738ed;--light:#c18aff;--white:#fff;
---muted:#aa9bbd;--line:#ffffff16;
+--bg:#090711;
+--panel:#151024;
+--panel2:#201431;
+--purple:#8738ed;
+--light:#c18aff;
+--white:#fff;
+--muted:#aa9bbd;
+--line:#ffffff16;
 }
 *{box-sizing:border-box}
 body{
-margin:0;background:radial-gradient(ellipse at 50% -10%,#41156a 0,transparent 42%),var(--bg);
-color:var(--white);font-family:Cairo,sans-serif;min-height:100vh
+margin:0;
+background:radial-gradient(ellipse at 50% -10%,#41156a 0,transparent 42%),var(--bg);
+color:var(--white);
+font-family:Cairo,sans-serif;
+min-height:100vh
 }
 a{text-decoration:none;color:inherit}
 button,input{font:inherit}
 .container{width:min(1120px,92%);margin:auto}
+
 .announcement{
-text-align:center;padding:9px;background:#211432;
-border-bottom:1px solid #9d50ef44;color:#d9bdff;font-size:12px
+text-align:center;
+padding:9px;
+background:#211432;
+border-bottom:1px solid #9d50ef44;
+color:#d9bdff;
+font-size:12px
 }
+
 header{
-position:sticky;top:0;z-index:100;
-background:#100b1eef;backdrop-filter:blur(18px);
+position:sticky;
+top:0;
+z-index:100;
+background:#100b1eef;
+backdrop-filter:blur(18px);
 border-bottom:1px solid var(--line)
 }
 nav{
-min-height:75px;display:flex;align-items:center;
-justify-content:space-between;gap:15px;direction:ltr
+min-height:75px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:15px;
+direction:ltr
 }
-.brand{font-size:20px;font-weight:900;color:#d9b3ff;direction:ltr}
+.brand{
+font-size:20px;
+font-weight:900;
+color:#d9b3ff;
+direction:ltr
+}
 .menu-wrap{position:relative}
 .menu{
-width:43px;height:43px;border-radius:12px;
-background:#211532;color:white;border:1px solid #ffffff22;
-font-size:25px;cursor:pointer;transition:.2s
+width:43px;
+height:43px;
+border-radius:12px;
+background:#211532;
+color:white;
+border:1px solid #ffffff22;
+font-size:25px;
+cursor:pointer;
+transition:.2s
 }
-.menu:hover,.menu.active{background:var(--purple);border-color:#c18aff}
+.menu:hover,.menu.active{
+background:var(--purple);
+border-color:#c18aff
+}
 .dropdown{
-display:none;position:absolute;top:53px;left:0;width:220px;
-padding:9px;background:#171024;border:1px solid #ffffff20;
-border-radius:15px;box-shadow:0 15px 45px #0009;direction:rtl
+display:none;
+position:absolute;
+top:53px;
+left:0;
+width:220px;
+padding:9px;
+background:#171024;
+border:1px solid #ffffff20;
+border-radius:15px;
+box-shadow:0 15px 45px #0009;
+direction:rtl
 }
 .dropdown.open{display:block;animation:show .18s ease}
-@keyframes show{from{opacity:0;transform:translateY(-7px)}to{opacity:1;transform:translateY(0)}}
+@keyframes show{
+from{opacity:0;transform:translateY(-7px)}
+to{opacity:1;transform:translateY(0)}
+}
 .dropdown button{
-width:100%;display:block;text-align:right;padding:11px 13px;
-border:0;border-radius:9px;background:transparent;
-color:#d8c9e8;font-size:12px;cursor:pointer;transition:.2s
+width:100%;
+display:block;
+text-align:right;
+padding:11px 13px;
+border:0;
+border-radius:9px;
+background:transparent;
+color:#d8c9e8;
+font-size:12px;
+cursor:pointer;
+transition:.2s
 }
-.dropdown button:hover,.dropdown button.selected{
-background:#8738ed;color:white
+.dropdown button:hover,
+.dropdown button.selected{
+background:#8738ed;
+color:white
 }
+
 main{min-height:65vh}
-.view{display:none;padding:65px 0;animation:show .3s ease}
+.view{
+display:none;
+padding:65px 0;
+animation:show .3s ease
+}
 .view.active{display:block}
+
 .hero{
-min-height:570px;display:grid;place-items:center;text-align:center;
-padding:70px 0;position:relative;overflow:hidden
+min-height:570px;
+display:grid;
+place-items:center;
+text-align:center;
+padding:70px 0;
+position:relative;
+overflow:hidden
 }
 .hero:before{
-content:"";position:absolute;width:350px;height:350px;
-background:#812ce8;filter:blur(130px);opacity:.23
+content:"";
+position:absolute;
+width:350px;
+height:350px;
+background:#812ce8;
+filter:blur(130px);
+opacity:.23
 }
 .hero-content{position:relative}
+
+/* صورة شعار بريف تاون */
 .brand-mark{
-width:145px;height:145px;margin:0 auto 25px;
-display:block;object-fit:cover;
+width:145px;
+height:145px;
+margin:0 auto 25px;
+display:block;
+object-fit:cover;
 border-radius:50%;
 border:4px solid #8738ed;
 box-shadow:0 0 35px #8738ed88,0 0 75px #8738ed33;
 background:#151024;
-transition:.3s;
+transition:.3s
 }
 .brand-mark:hover{
 transform:scale(1.06);
-box-shadow:0 0 45px #8738ed,0 0 85px #8738ed66;
+box-shadow:0 0 45px #8738ed,0 0 85px #8738ed66
 }
+
 .eyebrow{
-display:inline-block;border:1px solid #a958ff66;
-padding:8px 18px;border-radius:30px;color:#d6b1ff;font-size:11px
+display:inline-block;
+border:1px solid #a958ff66;
+padding:8px 18px;
+border-radius:30px;
+color:#d6b1ff;
+font-size:11px
 }
 h1{
-font-size:clamp(43px,9vw,85px);font-weight:900;margin:15px 0;
+font-size:clamp(43px,9vw,85px);
+font-weight:900;
+margin:15px 0;
 background:linear-gradient(90deg,#fff,#c18aff,#8738ed);
--webkit-background-clip:text;color:transparent
+-webkit-background-clip:text;
+color:transparent
 }
-.hero p{max-width:650px;margin:0 auto 25px;color:var(--muted);line-height:2;font-size:14px}
+.hero p{
+max-width:650px;
+margin:0 auto 25px;
+color:var(--muted);
+line-height:2;
+font-size:14px
+}
 .btn{
-display:inline-block;padding:12px 23px;border-radius:13px;
+display:inline-block;
+padding:12px 23px;
+border-radius:13px;
 background:linear-gradient(110deg,#7624dc,#ad55ff);
-color:white;font-size:12px;font-weight:800;
-border:1px solid #ffffff15;cursor:pointer;transition:.25s
+color:white;
+font-size:12px;
+font-weight:800;
+border:1px solid #ffffff15;
+cursor:pointer;
+transition:.25s
 }
-.btn:hover,.btn:focus{background:#8738ed;transform:translateY(-2px)}
-.btn.secondary{background:#ffffff08;border:1px solid #a958ff66}
-.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:650px;margin:45px auto}
+.btn:hover,.btn:focus{
+background:#8738ed;
+transform:translateY(-2px)
+}
+.btn.secondary{
+background:#ffffff08;
+border:1px solid #a958ff66
+}
+.actions{
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+max-width:650px;
+margin:45px auto
+}
 .stat,.panel{
 background:linear-gradient(145deg,#211532,#120d20);
-border:1px solid var(--line);border-radius:20px
+border:1px solid var(--line);
+border-radius:20px
 }
 .stat{padding:17px}
-.stat strong{display:block;color:#d3a7ff;font-size:22px}
-.stat span{font-size:10px;color:var(--muted)}
-.heading{text-align:center;margin-bottom:35px}
-.heading small{color:#bd8aff;letter-spacing:2px;font-weight:800}
-.heading h2{font-size:35px;margin:5px 0}
-.heading p{color:var(--muted);font-size:12px}
-.intro{padding:30px;line-height:2;color:#c9bdd7;font-size:13px}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.rule{padding:20px;transition:.25s}
-.rule:hover,.product:hover{transform:translateY(-4px);border-color:#b66cff88}
-.rule h3{font-size:15px;color:#e0c4ff;margin:0 0 12px}
-.rule ul{padding-right:20px;color:#c5b9d2;font-size:12px;line-height:2.2;margin:0}
+.stat strong{
+display:block;
+color:#d3a7ff;
+font-size:22px
+}
+.stat span{
+font-size:10px;
+color:var(--muted)
+}
+
+.heading{
+text-align:center;
+margin-bottom:35px
+}
+.heading small{
+color:#bd8aff;
+letter-spacing:2px;
+font-weight:800
+}
+.heading h2{
+font-size:35px;
+margin:5px 0
+}
+.heading p{
+color:var(--muted);
+font-size:12px
+}
+.intro{
+padding:30px;
+line-height:2;
+color:#c9bdd7;
+font-size:13px
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:14px
+}
+.rule{
+padding:20px;
+transition:.25s
+}
+.rule:hover,.product:hover{
+transform:translateY(-4px);
+border-color:#b66cff88
+}
+.rule h3{
+font-size:15px;
+color:#e0c4ff;
+margin:0 0 12px
+}
+.rule ul{
+padding-right:20px;
+color:#c5b9d2;
+font-size:12px;
+line-height:2.2;
+margin:0
+}
 .rule li{margin-bottom:4px}
+
 .search{
-width:100%;background:#151024;color:white;
-border:1px solid #ffffff22;border-radius:12px;padding:13px;
-margin-bottom:15px;outline:none
+width:100%;
+background:#151024;
+color:white;
+border:1px solid #ffffff22;
+border-radius:12px;
+padding:13px;
+margin-bottom:15px;
+outline:none
 }
-.search:focus{border-color:var(--purple);box-shadow:0 0 0 3px #8738ed22}
-.tabs{display:flex;gap:8px;overflow-x:auto;padding:5px 0 15px}
+.search:focus{
+border-color:var(--purple);
+box-shadow:0 0 0 3px #8738ed22
+}
+
+.tabs{
+display:flex;
+gap:8px;
+overflow-x:auto;
+padding:5px 0 15px
+}
 .tab{
-white-space:nowrap;background:#211532;color:#d4c4e5;
-border:1px solid var(--line);border-radius:11px;padding:9px 14px;
-font-size:11px;cursor:pointer
+white-space:nowrap;
+background:#211532;
+color:#d4c4e5;
+border:1px solid var(--line);
+border-radius:11px;
+padding:9px 14px;
+font-size:11px;
+cursor:pointer
 }
-.tab.active,.tab:focus{background:#8537df;color:white}
-.products{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.product{padding:23px;transition:.25s}
-.product-icon{font-size:28px;margin-bottom:12px}
+.tab.active,.tab:focus{
+background:#8537df;
+color:white
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px
+}
+.product{
+padding:23px;
+transition:.25s
+}
+.product-icon{
+font-size:28px;
+margin-bottom:12px
+}
 .product h3{font-size:15px}
-.price{font-size:24px;color:#d4a5ff;font-weight:900}
-.price small{font-size:11px}
-.product .btn{width:100%;text-align:center;margin-top:12px}
-.founders,.servers{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
-.founder,.server{padding:25px;display:flex;align-items:center;gap:17px}
-.avatar{
-width:55px;height:55px;background:#8138db;border-radius:17px;
-display:grid;place-items:center;font-size:25px
+.price{
+font-size:24px;
+color:#d4a5ff;
+font-weight:900
 }
-.founder p,.server p{font-size:11px;color:var(--muted);margin:3px 0}
-.founder h3,.server h3{margin:0;font-size:16px}
+.price small{font-size:11px}
+.product .btn{
+width:100%;
+text-align:center;
+margin-top:12px
+}
+
+.founders,.servers{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px
+}
+.founder,.server{
+padding:25px;
+display:flex;
+align-items:center;
+gap:17px
+}
+.avatar{
+width:55px;
+height:55px;
+background:#8138db;
+border-radius:17px;
+display:grid;
+place-items:center;
+font-size:25px
+}
+.founder p,.server p{
+font-size:11px;
+color:var(--muted);
+margin:3px 0
+}
+.founder h3,.server h3{
+margin:0;
+font-size:16px
+}
 .server{justify-content:space-between}
-.activation{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+
+.activation{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px
+}
 .activation .panel{padding:25px}
 .activation h3{color:#d5acff}
-.activation ul{color:#c9bdd7;font-size:12px;line-height:2.4;padding-right:20px}
-.jobs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.job{text-align:center;padding:22px}
+.activation ul{
+color:#c9bdd7;
+font-size:12px;
+line-height:2.4;
+padding-right:20px
+}
+
+.jobs{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px
+}
+.job{
+text-align:center;
+padding:22px
+}
 .job h3{font-size:14px}
-.job p{font-size:11px;color:var(--muted)}
+.job p{
+font-size:11px;
+color:var(--muted)
+}
+
 footer{
-border-top:1px solid var(--line);text-align:center;
-padding:35px 10px;color:var(--muted);font-size:11px
+border-top:1px solid var(--line);
+text-align:center;
+padding:35px 10px;
+color:var(--muted);
+font-size:11px
 }
-.footer-brand{font-size:22px;color:#d2a6ff;font-weight:900}
+.footer-brand{
+font-size:22px;
+color:#d2a6ff;
+font-weight:900
+}
 .back-home{
-display:block;margin:0 auto 25px;background:#211532;
-border:1px solid #ffffff20;color:#d8b7ff;padding:9px 17px;
-border-radius:11px;cursor:pointer;font-size:12px
+display:block;
+margin:0 auto 25px;
+background:#211532;
+border:1px solid #ffffff20;
+color:#d8b7ff;
+padding:9px 17px;
+border-radius:11px;
+cursor:pointer;
+font-size:12px
 }
-.back-home:hover{background:var(--purple);color:white}
-.empty{text-align:center;padding:45px 15px}
+.back-home:hover{
+background:var(--purple);
+color:white
+}
+.empty{
+text-align:center;
+padding:45px 15px
+}
+
 @media(max-width:800px){
 .grid{grid-template-columns:1fr}
 .products{grid-template-columns:repeat(2,1fr)}
@@ -177,7 +447,10 @@ border-radius:11px;cursor:pointer;font-size:12px
 @media(max-width:550px){
 .view{padding:45px 0}
 .hero{min-height:530px}
-.brand-mark{width:115px;height:115px}
+.brand-mark{
+width:115px;
+height:115px
+}
 .heading h2{font-size:27px}
 .products{gap:9px}
 .product{padding:13px}
@@ -189,14 +462,19 @@ border-radius:11px;cursor:pointer;font-size:12px
 }
 </style>
 </head>
+
 <body>
 
-<div class="announcement">♛ BRAVE TOWN — البوابة الرسمية للمدينة</div>
+<div class="announcement">
+♛ BRAVE TOWN — البوابة الرسمية للمدينة
+</div>
 
 <header>
 <nav class="container">
+
 <div class="menu-wrap">
 <button class="menu" id="menu" aria-label="القائمة" aria-expanded="false">⋮</button>
+
 <div class="dropdown" id="dropdown">
 <button data-view="home" class="selected">♛ الرئيسية</button>
 <button data-view="intro">✦ نبذة عن المدينة</button>
@@ -209,44 +487,64 @@ border-radius:11px;cursor:pointer;font-size:12px
 <button data-view="contact">✧ انضم إلى بريف تاون</button>
 </div>
 </div>
+
 <a class="brand" href="#" id="brandHome">♛ BRAVE TOWN</a>
 </nav>
 </header>
 
 <main>
+
 <section class="view active" id="home">
 <div class="hero">
 <div class="hero-content container">
 
-<!-- صورة شعار بريف تاون -->
-<img class="brand-mark" src="logo.jpg" alt="BRAVE TOWN Logo">
+<img class="brand-mark" src="IMG_9522.jpeg" alt="BRAVE TOWN Logo">
 
 <div class="eyebrow">THE OFFICIAL BRAVE TOWN PORTAL</div>
+
 <h1>BRAVE TOWN</h1>
-<p>مرحباً بك في عالم بريف تاون، عالم يجمع الواقعية والاحترافية والتحدي. اكتشف أنظمة المدينة واختر القسم الذي تريد زيارته.</p>
+
+<p>
+مرحباً بك في عالم بريف تاون، عالم يجمع الواقعية والاحترافية والتحدي.
+اكتشف أنظمة المدينة واختر القسم الذي تريد زيارته.
+</p>
+
 <div class="actions">
-<a class="btn" href="https://discord.gg/bt-1" target="_blank" rel="noopener">انضم إلى السيرفر الأساسي ↗</a>
-<button class="btn secondary" onclick="openView('rules')">استكشف القوانين ↓</button>
+<a class="btn" href="https://discord.gg/bt-1" target="_blank" rel="noopener">
+انضم إلى السيرفر الأساسي ↗
+</a>
+<button class="btn secondary" onclick="openView('rules')">
+استكشف القوانين ↓
+</button>
 </div>
+
 <div class="stats">
 <div class="stat"><strong>07</strong><span>أقسام القوانين</span></div>
 <div class="stat"><strong>24/7</strong><span>مجتمع بريف تاون</span></div>
 <div class="stat"><strong>ELITE</strong><span>تجربة احترافية</span></div>
 </div>
+
 </div>
 </div>
 </section>
 
 <section class="view" id="intro">
 <div class="container panel intro">
-<div class="heading"><small>WELCOME TO BRAVE TOWN</small><h2>مرحباً بك في BRAVE TOWN</h2></div>
+<div class="heading">
+<small>WELCOME TO BRAVE TOWN</small>
+<h2>مرحباً بك في BRAVE TOWN</h2>
+</div>
 هذا الموقع هو المرجع الرسمي للاعبين، ويضم القوانين العامة وقوانين الرول بلاي والجهات الرسمية والمتجر وشروط التفعيل. نهدف إلى توفير بيئة منظمة وعادلة وتجربة ممتعة لجميع اللاعبين.
 </div>
 </section>
 
 <section class="view" id="rules">
 <div class="container">
-<div class="heading"><small>SERVER REGULATIONS</small><h2>مركز القوانين</h2><p>جميع الأنظمة والقوانين الرسمية لمدينة بريف تاون</p></div>
+<div class="heading">
+<small>SERVER REGULATIONS</small>
+<h2>مركز القوانين</h2>
+<p>جميع الأنظمة والقوانين الرسمية لمدينة بريف تاون</p>
+</div>
 <input class="search" id="search" placeholder="ابحث عن قانون...">
 <div class="tabs" id="tabs"></div>
 <div class="grid" id="ruleGrid"></div>
@@ -255,14 +553,22 @@ border-radius:11px;cursor:pointer;font-size:12px
 
 <section class="view" id="store">
 <div class="container">
-<div class="heading"><small>OFFICIAL STORE</small><h2>متجر بريف تاون</h2><p>الخدمات والمنتجات المتوفرة</p></div>
+<div class="heading">
+<small>OFFICIAL STORE</small>
+<h2>متجر بريف تاون</h2>
+<p>الخدمات والمنتجات المتوفرة</p>
+</div>
 <div class="products" id="products"></div>
 </div>
 </section>
 
 <section class="view" id="jobs">
 <div class="container">
-<div class="heading"><small>JOIN OUR TEAM</small><h2>القطاعات والتقديم</h2><p>كن جزءاً من مجتمع بريف تاون</p></div>
+<div class="heading">
+<small>JOIN OUR TEAM</small>
+<h2>القطاعات والتقديم</h2>
+<p>كن جزءاً من مجتمع بريف تاون</p>
+</div>
 <div class="jobs">
 <div class="panel job"><div>🚔</div><h3>الشرطة</h3><p>التقديم عبر الديسكورد</p></div>
 <div class="panel job"><div>🚑</div><h3>الإسعاف EMS</h3><p>التقديم عبر الديسكورد</p></div>
@@ -273,28 +579,53 @@ border-radius:11px;cursor:pointer;font-size:12px
 
 <section class="view" id="founders">
 <div class="container">
-<div class="heading"><small>THE FOUNDERS</small><h2>المؤسسون</h2><p>قيادة وتأسيس مجتمع BRAVE TOWN</p></div>
+<div class="heading">
+<small>THE FOUNDERS</small>
+<h2>المؤسسون</h2>
+<p>قيادة وتأسيس مجتمع BRAVE TOWN</p>
+</div>
 <div class="founders">
-<div class="panel founder"><div class="avatar">♛</div><div><h3>أسامة</h3><p>المؤسس · .os1.</p></div></div>
-<div class="panel founder"><div class="avatar">♛</div><div><h3>سامي</h3><p>المؤسس · iz9m</p></div></div>
+<div class="panel founder">
+<div class="avatar">♛</div>
+<div><h3>أسامة</h3><p>المؤسس · .os1.</p></div>
+</div>
+<div class="panel founder">
+<div class="avatar">♛</div>
+<div><h3>سامي</h3><p>المؤسس · iz9m</p></div>
+</div>
 </div>
 </div>
 </section>
 
 <section class="view" id="servers">
 <div class="container">
-<div class="heading"><small>OUR COMMUNITY</small><h2>السيرفرات</h2><p>مجتمعات بريف تاون الرسمية</p></div>
+<div class="heading">
+<small>OUR COMMUNITY</small>
+<h2>السيرفرات</h2>
+<p>مجتمعات بريف تاون الرسمية</p>
+</div>
 <div class="servers">
-<div class="panel server"><div><h3>السيرفر الأساسي</h3><p>المجتمع الرسمي للمدينة</p></div><a class="btn" href="https://discord.gg/bt-1" target="_blank" rel="noopener">انضم الآن ↗</a></div>
-<div class="panel server"><div><h3>سيرفر العصابات</h3><p>مجتمع العصابات الرسمي</p></div><a class="btn" href="https://discord.gg/EUCBHnpkk" target="_blank" rel="noopener">انضم الآن ↗</a></div>
+<div class="panel server">
+<div><h3>السيرفر الأساسي</h3><p>المجتمع الرسمي للمدينة</p></div>
+<a class="btn" href="https://discord.gg/bt-1" target="_blank" rel="noopener">انضم الآن ↗</a>
+</div>
+<div class="panel server">
+<div><h3>سيرفر العصابات</h3><p>مجتمع العصابات الرسمي</p></div>
+<a class="btn" href="https://discord.gg/EUCBHnpkk" target="_blank" rel="noopener">انضم الآن ↗</a>
+</div>
 </div>
 </div>
 </section>
 
 <section class="view" id="activation">
 <div class="container">
-<div class="heading"><small>ACTIVATION SYSTEM</small><h2>شروط التفعيل</h2><p>الشروط المطلوبة لدخول المدينة</p></div>
+<div class="heading">
+<small>ACTIVATION SYSTEM</small>
+<h2>شروط التفعيل</h2>
+<p>الشروط المطلوبة لدخول المدينة</p>
+</div>
 <div class="activation">
+
 <div class="panel">
 <h3>الشروط العامة</h3>
 <ul>
@@ -305,6 +636,7 @@ border-radius:11px;cursor:pointer;font-size:12px
 <li>يحق لك امتلاك شخصيتين فقط.</li>
 </ul>
 </div>
+
 <div class="panel">
 <h3>قبل دخول المدينة</h3>
 <ul>
@@ -315,6 +647,7 @@ border-radius:11px;cursor:pointer;font-size:12px
 <li>التواصل مع الإدارة عند وجود استفسار.</li>
 </ul>
 </div>
+
 </div>
 </div>
 </section>
@@ -330,6 +663,7 @@ border-radius:11px;cursor:pointer;font-size:12px
 </div>
 </div>
 </section>
+
 </main>
 
 <footer>
@@ -417,41 +751,53 @@ function renderTabs(){
 tabs.innerHTML=sections.map((s,i)=>
 `<button class="tab ${i===active?'active':''}" data-i="${i}">${s.name}</button>`
 ).join("");
+
 tabs.querySelectorAll("button").forEach(b=>{
 b.onclick=()=>{
 active=Number(b.dataset.i);
-renderTabs();renderRules();
+renderTabs();
+renderRules();
 };
 });
 }
+
 function renderRules(){
 const q=search.value.trim().toLowerCase();
-let html="",count=0;
+let html="";
+
 sections[active].items.forEach((item,i)=>{
 if(q&&!(item[0]+" "+item[1].join(" ")).toLowerCase().includes(q))return;
-count++;
+
 html+=`<article class="panel rule">
 <h3><span style="color:#a45aff">${String(i+1).padStart(2,"0")} — </span>${item[0]}</h3>
 <ul>${item[1].map(x=>`<li>${x}</li>`).join("")}</ul>
 </article>`;
 });
+
 grid.innerHTML=html||'<p style="color:#aaa">لا توجد نتائج مطابقة.</p>';
 }
-renderTabs();renderRules();
+
+renderTabs();
+renderRules();
 search.addEventListener("input",renderRules);
 
 const products=[
-["تفعيل فوري","2.50","♛"],["رتبة VIP","5","✦"],
-["سلاح خفيف","2.50","⚔"],["سلاح ثقيل","7.50","◆"],
-["مقر عصابة","20","⌂"],["فتح قطاع عسكري","17","★"]
+["تفعيل فوري","2.50","♛"],
+["رتبة VIP","5","✦"],
+["سلاح خفيف","2.50","⚔"],
+["سلاح ثقيل","7.50","◆"],
+["مقر عصابة","20","⌂"],
+["فتح قطاع عسكري","17","★"]
 ];
+
 document.getElementById("products").innerHTML=products.map(p=>`
 <div class="panel product">
 <div class="product-icon">${p[2]}</div>
 <h3>${p[0]}</h3>
 <div class="price">${p[1]} <small>﷼</small></div>
 <a class="btn secondary" href="https://discord.gg/bt-1" target="_blank" rel="noopener">اطلب الآن ↗</a>
-</div>`).join("");
+</div>
+`).join("");
 
 const menu=document.getElementById("menu");
 const dropdown=document.getElementById("dropdown");
@@ -459,25 +805,36 @@ const menuItems=dropdown.querySelectorAll("button");
 
 function openView(id){
 document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));
+
 const target=document.getElementById(id);
 if(target)target.classList.add("active");
+
 menuItems.forEach(b=>{
 b.classList.toggle("selected",b.dataset.view===id);
 });
+
 dropdown.classList.remove("open");
 menu.classList.remove("active");
 menu.setAttribute("aria-expanded","false");
+
 window.scrollTo({top:0,behavior:"smooth"});
 }
+
 menu.onclick=()=>{
 const opened=dropdown.classList.toggle("open");
 menu.classList.toggle("active",opened);
 menu.setAttribute("aria-expanded",String(opened));
 };
-menuItems.forEach(b=>b.onclick=()=>openView(b.dataset.view));
+
+menuItems.forEach(b=>{
+b.onclick=()=>openView(b.dataset.view);
+});
+
 document.getElementById("brandHome").onclick=e=>{
-e.preventDefault();openView("home");
+e.preventDefault();
+openView("home");
 };
+
 document.addEventListener("click",e=>{
 if(!e.target.closest(".menu-wrap")){
 dropdown.classList.remove("open");
@@ -485,6 +842,7 @@ menu.classList.remove("active");
 menu.setAttribute("aria-expanded","false");
 }
 });
+
 document.addEventListener("keydown",e=>{
 if(e.key==="Escape"){
 dropdown.classList.remove("open");
@@ -493,5 +851,6 @@ menu.setAttribute("aria-expanded","false");
 }
 });
 </script>
+
 </body>
 </html>
