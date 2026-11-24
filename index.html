@@ -144,7 +144,6 @@ opacity:.23
 }
 .hero-content{position:relative}
 
-/* صورة شعار بريف تاون */
 .brand-mark{
 width:145px;
 height:145px;
@@ -348,36 +347,91 @@ text-align:center;
 margin-top:12px
 }
 
+/* المؤسسون */
 .founders,.servers{
 display:grid;
 grid-template-columns:repeat(2,1fr);
 gap:15px
 }
-.founder,.server{
+.founder{
 padding:25px;
 display:flex;
 align-items:center;
-gap:17px
+gap:20px;
+background:linear-gradient(145deg,#211532,#120d20);
+border:1px solid #8738ed55;
+border-radius:20px;
+transition:.3s;
+position:relative;
+overflow:hidden
+}
+.founder:before{
+content:"";
+position:absolute;
+width:120px;
+height:120px;
+background:#8738ed;
+filter:blur(75px);
+opacity:.12;
+left:-30px;
+top:-30px;
+pointer-events:none
+}
+.founder:hover{
+transform:translateY(-5px);
+border-color:#c18aff;
+box-shadow:0 0 30px #8738ed55
 }
 .avatar{
-width:55px;
-height:55px;
-background:#8138db;
-border-radius:17px;
-display:grid;
-place-items:center;
-font-size:25px
+width:100px;
+height:100px;
+flex-shrink:0;
+overflow:hidden;
+border-radius:22px;
+border:2px solid #a958ff;
+background:#151024;
+box-shadow:0 0 20px #8738ed66;
+transition:.3s;
+position:relative;
+z-index:1
 }
-.founder p,.server p{
+.avatar img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+transition:.4s
+}
+.founder:hover .avatar img{
+transform:scale(1.08)
+}
+.founder h3{
+color:#e5caff;
+font-size:18px;
+margin:0
+}
+.founder p{
+font-size:11px;
+color:var(--muted);
+margin:5px 0
+}
+
+.server{
+padding:25px;
+display:flex;
+align-items:center;
+gap:17px;
+justify-content:space-between
+}
+.server p{
 font-size:11px;
 color:var(--muted);
 margin:3px 0
 }
-.founder h3,.server h3{
+.server h3{
 margin:0;
 font-size:16px
 }
-.server{justify-content:space-between}
 
 .activation{
 display:grid;
@@ -455,6 +509,10 @@ height:115px
 .products{gap:9px}
 .product{padding:13px}
 .founders,.servers,.activation{grid-template-columns:1fr}
+.avatar{
+width:85px;
+height:85px
+}
 .jobs{grid-template-columns:1fr 1fr}
 .stat{padding:12px 5px}
 .stat strong{font-size:17px}
@@ -579,20 +637,35 @@ height:115px
 
 <section class="view" id="founders">
 <div class="container">
+
 <div class="heading">
 <small>THE FOUNDERS</small>
 <h2>المؤسسون</h2>
 <p>قيادة وتأسيس مجتمع BRAVE TOWN</p>
 </div>
+
 <div class="founders">
+
 <div class="panel founder">
-<div class="avatar">♛</div>
-<div><h3>أسامة</h3><p>المؤسس · .os1.</p></div>
+<div class="avatar">
+<img src="IMG_9539.jpeg" alt="صورة أسامة">
 </div>
+<div>
+<h3>أسامة</h3>
+<p>المؤسس · .os1.</p>
+</div>
+</div>
+
 <div class="panel founder">
-<div class="avatar">♛</div>
-<div><h3>سامي</h3><p>المؤسس · iz9m</p></div>
+<div class="avatar">
+<img src="IMG_9540.jpeg" alt="صورة سامي">
 </div>
+<div>
+<h3>سامي</h3>
+<p>المؤسس · iz9m</p>
+</div>
+</div>
+
 </div>
 </div>
 </section>
